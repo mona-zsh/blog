@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "Why am I so bad at this?"
+date:   2015-04-07 18:20:00
+categories: python
+root: "../"
+---
+
+“Why is my English so bad?"
+
+It was obvious that my team lead, mentor, and friend, Yang, had come across yet another listicle on BuzzFeed. 
+
+<!--more-->
+
+It’s not uncommon to hear Yang call himself “bad”, even though he’s a very talented engineer with a good eye for product. I knew Yang briefly as the StarCraft team coach when we were students at Princeton. After graduating, he became a trader at Susquehanna International Group, switched effortlessly from finance to engineering at Google, and promptly decided to quit two Januarys ago because he had bigger ambitions than free lunch and micro kitchens. (He has since moved onto [Oscar](https://www.hioscar.com/), the health insurance company, because he’s the type to find himself chasing interesting problems and markets).
+
+So when Yang calls himself “bad” for forgetting a corner case or not knowing the meaning of a word in English,  I think it’s just his way setting abnormally high standards for himself.  As for me? I have a very different background from Yang. I majored in English Literature and interned briefly at a literary agency. I was a co-founder of the [Collegiate Starleague (CSL)](http://www.cstarleague.com), where I entrenched myself in our community and services, but had little to do with technology. I didn’t know what a SQL query was. I begged for data from our developers and learned my way around a Drupal, and then Ruby, admin panel as I organized tournaments between Princeton and MIT on the virtual battlefield of StarCraft and League of Legends. 
+
+I could only watch from the sidelines when the startup started to encounter growing pains (we grew from 26 schools and 100 players to over 500 schools and 3,000 players, and hadn’t really moved up from Excel spreadsheets by then). I was ill-equipped to fix our technological problems, and felt, for the first time, powerless.
+
+I decided to quit what had been my life for five years out of my twenty-something years. Yang decided to extend me an invitation. “Become an engineer,” he said. 
+
+I accepted his offer. 
+
+In January 2013, I started interning at [Switch](http://switchapp.com), where we help people with jobs find jobs.
+
+I’m now what you might call a software engineer. I feel weird calling myself a software engineer because I’m an occasional perpetrator of what Yang considers “bad” without knowing that they’re bad things to do, like initializing an NSDictionary with nil terminated syntax (apparently, this is bad because this is deprecated and we have nicer syntax for it nowadays in Objective-C). So when Yang asked, jokingly, why he was bad at English, I ignored him and continued coding. I had to dedicate my full attention to figuring out how to implement a classification algorithm in a modular way. The solution wasn’t coming to me easily.
+
+"So, do you know what ardent means?" Yang asked.
+
+Yes, I thought as I coded, and all the words came unbidden--love, passion, poetry, fire, flames, heat, ambition. An ardent lover stares into the eyes of her beloved, and gives him the world and herself. An ardent student is dedicated to his field of study, spending nights and days poring over the minutest of details in a dark and dusty library stack, probably by candlelight. 
+
+Images and synonyms fought for their place in my single definition of the word. It’s hard to define a word as you might define a variable in a programming language--that is, with a single value. This word was more complicated than that, as all words are. They drag out a host of meanings with them.
+
+Still, it turns out that a simple synonym usually satisfies our definition of definitions.
+
+“It means passionate.”
+
+Yang nodded. He didn’t look surprised. Many people know the meaning of ardent, and sure enough, Yang had a harder word in store--the one that had stumped him in whatever article he had been reading. 
+
+“Do you know what argent means?”
+
+A few words and wisps of ideas floated through my head. This one was a more distant memory, but I had seen it somewhere once and locked it away carefully--royalty, silver, a crest, a duke. 
+
+“It has something to do with silver.”
+
+At the time, my eyes were glued to my code. I had known its meaning without thinking. 
+
+Yang seemed impressed. “How did you know that?” 
+
+I had no idea how I knew it. 
+
+“I read a lot of books,” I replied, and then returned to my tests, where I had no easy grace. I was struggling with my foray into modular programming, refactoring code so that we could easily swap out a keyword based classifier for a Naive Bayes classifier (and no, I didn’t know what this was yet, but [Ricky](https://twitter.com/rickychang) our awesome CTO and former data scientist at eBay assured me that it was a good idea and fun and that we would end up using it, so we should be prepared). I ended up writing a Classifier class with a constructor that initialized an object of that class with a self.classifier_type.
+
+{% highlight python %}
+class Classifier:
+	def __init__(self, classifier_type):
+		self.classifier_type = classifier_type
+
+	def classify(self):
+		return self.classifier_type.classify()
+
+class KeywordBasedClassifier:
+	def classify(self, user):
+		my algorithm here.
+{% endhighlight %}
+
+I was pretty proud of this. All we had to do was make an instance of Classifier and call classify:
+
+{% highlight python %}
+Classifier(KeywordBasedClassifier).classify(user)
+{% endhighlight %}
+
+I showed Yang and Ricky. Ricky was politely quiet. Yang told me to use a subclass instead. It ended up much cleaner and readable:
+
+{% highlight python %}
+class Classifier:
+	def get_classification(self, user):
+		self.classify(user)
+	def classify(self, user):
+		raise NotImplementedError
+
+class KeywordBasedClassifier(Classifier):
+	def classify(self, user):
+		my algorithm here.
+
+KeywordBasedClassifier().get_classification(user)
+
+{% endhighlight %}
+
+I was a little embarrassed. Of course I should have subclassed Classifier. I had learned to subclass in Java courses in college. I had learned to subclass in our iOS app. In that moment of embarrassment, I was tempted to ask myself: “Why is my Python so bad?"
+
+I didn’t, and I will never ask that question.
+
+Why is that? 
+
+I already know the answer: when my Python’s bad, it's because I haven’t experienced enough to know things for granted. When Yang had asked me what “argent” meant, I knew its definition because I’ve read enough words to take things in the English language for granted. I know what “argent” means. I even know what “wainscoting” is (I’m not proud of it, but I looked it up on my Kindle once and it stuck), but I’ve learned to recognize that that has no reflection on my actual skill with the English language. It’s just a measure of how much I know at any given time. 
+
+So “bad” isn’t the right word for Yang’s English, and “bad” wasn't the right word for my Python. Yang just happened to not know a word. I just happened to not recognize a use case for a common structural pattern in object oriented programming. All that meant was that Yang was unable to use the word “argent” until that day. It meant that, while I didn’t think to use an abstraction that I had dutifully learned in COS126 and promptly forgotten, I had just come across a real world example where subclassing was a solution.
+
+When we get down to it, “bad” is a bad word for anything but itself. It’s one of those nondescript words you use to generalize. Calling something “bad” describes a state and has no implications about where it came from and where it’s going.
+
+So here’s a better word for Yang’s English and my Python: “ongoing”. We’re all works in progress, and it would be a shame to let something bad happen to that.

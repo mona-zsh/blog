@@ -1,0 +1,195 @@
+---
+layout: post
+title:  "Python Gotchas with Get"
+date:   2015-06-04
+categories: python
+root: "../"
+---
+
+{% highlight python %}
+
+riddle = {
+	"question": "answer",
+	"truth": None,
+}
+
+x = riddle.get("truth", False)
+
+{% endhighlight %}
+
+> What is `x`? 
+
+<!--more-->
+[^Answer]
+
+There comes a time in every programmer's life where she feels like a program or language is "out to get her". This is what I eventually came to recognize as a **gotcha**, or ["a feature of a system, a program or a programming language that works in the way it is documented but is counter-intuitive and almost invites mistakes".][wiki]
+
+I was recently gotten by a Python convenience function, `dict.get(key[, default])`, which you might use if you're working with **dictionaries**. Let's make sure it doesn't get you, too!
+
+# The Dictionary
+
+Python has a useful data structure, the dictionary, which is "best [thought of] as an unordered set of _key:value_ pairs". The cool thing about dictionaries is that they associate almost any one thing to another (whereas a list only associated an index with a value -- see [Learn Python the Hard Way][3]). With a dictionary, you can store a value with a key, extract a value with a key, or delete a value with a key.
+
+Let's store a few values to a few keys.
+
+{% highlight python %}
+
+opposites = {
+	"Happy": "Sad",
+	True: False,
+	42: 666
+}
+
+{% endhighlight %}
+
+You can add values
+
+{% highlight python %}
+
+opposites["Red"] = "Blue"
+
+{% endhighlight %}
+
+and get them with the same subscript syntax.
+
+{% highlight python %}
+
+opposites["Red"]
+> "Blue"
+
+{% endhighlight %}
+
+What happens when we try to get the value for a key that doesn't exist?
+
+{% highlight python %}
+
+opposites["Blue"]
+> Traceback (most recent call last):
+> KeyError: "Blue"
+
+{% endhighlight %}
+
+There are some cases where, instead of a `KeyError`, we have a default value for keys that are missing from a dictionary. That's where `get` comes in handy.
+
+# dict.get(key[, default]))
+
+> Return the value for key if key is in the dictionary, else default. If default is not given, it defaults to None, so that this method never raises a KeyError.
+> [The Python Standard Library][2]
+
+Let's say we have a dictionary to keep track of animal sightings. This dictionary has animal names as _keys_ and an integer _value_ for number of sightings.
+
+{% highlight python %}
+
+sightings = {
+	"Bear": 3,
+	"Cat": 5,
+	"Panda": 1,
+}
+
+{% endhighlight %}
+
+We want to check whether there have been sightings of the fabled Front-Facing Baby Chick (🐥) lately, but we're not sure that it's been stored in the dictionary as a key. We also know that if `Front-Facing Baby Chick` isn't a key in the dictionary, we should assume that it has been sighted `0` times.
+
+This is where we use `get`.
+
+{% highlight python %}
+
+baby_chick_sightings = sightings.get('Front-Facing Baby Chick', 0)
+
+baby_chick_sightings
+> 0
+
+{% endhighlight %}
+
+Awesome! Now we can get a default value from a key instead of a `KeyError`. This is also much more readable than:
+
+{% highlight python %}
+
+try:
+	baby_chick_sightings = sightings['Front-Facing Baby Chick']
+except KeyError:
+	baby_chick_sightings = 0
+
+{% endhighlight %}
+
+or
+
+{% highlight python %}
+
+baby_chick_sightings = sightings.get('Front-Facing Baby Chick')
+if baby_chick_sightings:
+	// do something with baby_chick_sightings
+
+{% endhighlight %}
+
+# Here's Where They Get You
+
+Your Pythonista friend, Alice, thought she saw a Front-Facing Baby Chick (🐥) but then realized it was a run of the mill Baby Chick (🐤), and she thought that her mistake probably invalidated everyone else's sightings, too.[^2] This is how she chose to record it.
+
+{% highlight python %}
+
+sightings["Front-Facing Baby Chick"] = sightings.get("Front-Facing Baby Chick", 0) + 1
+sightings["Front-Facing Baby Chick"] = None
+sightings["Baby Chick"] = sightings.get("Baby Chick", 0) + 1
+
+sightings
+>{
+	"Bear": 3,
+	"Cat": 5,
+	"Panda": 1,
+	"Front-Facing Baby Chick": None
+	"Baby Chick": 1,
+}
+{% endhighlight %}
+
+What do you think happens now?
+
+Hypothesis: `get` tries to find the value associated with `Front-Facing Baby Chick`, and since the value is `None`, it uses the default value passed in as a parameter, `0`.
+
+{% highlight python %}
+baby_chick_sightings = sightings.get('Front-Facing Baby Chick', 0)
+baby_chick_sightings
+> None
+{% endhighlight %}
+
+Not `0`, but `None`. Why?
+
+Under the covers, the implementation of `get` might look something like this:
+
+{% highlight python %}
+def get(dictionary, key, default=None):
+    try: 
+        return dictionary[key]
+    except KeyError: 
+        return default
+{% endhighlight %}
+
+not
+
+{% highlight python %}
+def get(dictionary, key, default=None):
+    try: 
+        value = dictionary[key]
+        if not value:
+        	return default
+    except KeyError: 
+        return default
+{% endhighlight %}
+
+Which makes sense. If you call `dict.get("Front-Facing Baby Chick", False)`, we don't get a `KeyError` -- we get `None`, which was a value in the dictionary. Getting a **_value_ `None` associated with a _key_** is different from the **_key_ not being in the dictionary**, and `get` does exactly what the docs say: "return the value for key if key is in the dictionary". 
+
+So next time you try to specify a default, non-`None` value for a key that might be in a dictionary, remember that getting `None` back will still be possible.
+
+Don't let them get you 🐥.
+
+<sub>__Discussion__
+	<br>Is there ever a reason to set a key's value to `None` in a dictionary?
+	<br>What are your favorite gotchas to watch out for?
+</sub>
+
+[^Answer]: X = None
+[^2]: While Alice decided that her mistake invalidated `Front-Facing Baby Chick` sightings, she didn't then attribute the sightings of `Front-Facing Baby Chick` to sightings of the regular `Baby Chick`. She just chose to set one key to `None`. This is mainly a thought exercise, and hopefully you will not encounter Pythonista friends who set keys to `None`. <br><br>Instead of storing a value, `None`, to a key, Alice probably should have decremented the value by 1 or deleted the key.
+		
+[wiki]: http://en.wikipedia.org/wiki/Gotcha_%28programming%29 "Gotcha (Programming, Wiki"
+[2]: (https://docs.python.org/3/library/stdtypes.html?highlight=get#dict.get) "Python Standard Library"
+[3]: http://learnpythonthehardway.org/book/ex39.html "Learn Python the Hard Way"

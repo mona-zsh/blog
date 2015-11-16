@@ -1,0 +1,14 @@
+# Site settings
+title: eskimona's igloo
+email: mona.zsh@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  wherein there will be blog posts about coding and other things unknown
+baseurl: ""
+url: "http://www.eskimona.com" # the base hostname & protocol for your site
+twitter_username: hazelynutter
+github_username:  mona-zsh
+highlighter: rouge
+excerpt_separator: <!--more-->
+
+# Build settings
+markdown: kramdown

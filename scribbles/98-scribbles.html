@@ -1,0 +1,20 @@
+---
+layout: page
+title: Scribbles
+permalink: /scribbles/
+description: A scratchpad for notes on my goals and process, without worrying too much about prose.
+---
+
+<div class="more">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'scribbles' %}
+        <li>
+          <span class="scribble-meta"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }}</a></span>
+          {{ post.content }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</div>

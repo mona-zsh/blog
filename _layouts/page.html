@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="page">
+
+  {% if page.description %}
+  <header class="page-heading">
+    <h5>{{ page.description }}</h5>
+  </header>
+  {% endif %}
+
+  <article class="page-content">
+    {{ content }}
+  </article>
+
+</div>
