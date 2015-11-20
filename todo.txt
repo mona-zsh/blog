@@ -1,0 +1,7 @@
+Features:
+
+- [x] set up Jekyll bootstrap to help create new posts
+- [ ] blog layout
+- [ ] google analytics
+- [ ] RSS feed
+- [ ] Disqus (because I want it)

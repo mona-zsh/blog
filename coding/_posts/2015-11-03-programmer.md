@@ -3,6 +3,7 @@ layout: post
 title: Being a programmer
 date: 2015-11-03
 categories: General
+published: false
 root: "../"
 ---
 
