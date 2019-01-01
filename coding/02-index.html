@@ -1,0 +1,21 @@
+---
+layout: page
+title: Coding
+permalink: /coding
+description: writings of a software engineer (iOS, Python, Django)
+---
+
+<div class="coding">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'coding' %}
+  		<li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} ~ <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
+     	</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

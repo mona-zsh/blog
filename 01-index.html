@@ -1,16 +1,16 @@
 ---
 layout: page
-title: Coding
+title: Essays
 permalink: /
-description: a blog about coding (and more)
+description: in chronological order
 ---
 
 <div class="home">
   <ul class="post-list">
     {% for post in site.posts %}
-      {% if post.categories contains 'coding' %}
+      {% if post.categories contains 'coding' or 'life' %}
   		<li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} ~ <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} ~ {{ post.categories[0] }} ~ <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
      	</li>
       {% endif %}
     {% endfor %}

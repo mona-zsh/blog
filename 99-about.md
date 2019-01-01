@@ -4,10 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Mona is a full-stack engineer with a background in collegiate gaming and English literature, which means she loves working with languages of all sorts. Her current stack includes PostgreSQL, Python, Django, iOS, and of course, English.
+Mona Zhang is a Princeton English major (class of 2012), software engineer ([Switch](https://en.wikipedia.org/wiki/Switch_(app))), eSports founder ([of the Collegiate Starleague](www.cstarleague.com)), and bra entrepreneur.
 
-Within this blogging igloo, Mona writes about code, [love](https://medium.com/@hazelynut/why-we-fall-in-butterfly-love-cfdb01474068), [family](https://medium.com/@hazelynut/my-father-4d23672e5a3b), [hiking](https://medium.com/@hazelynut/day-1-all-boys-leave-home-some-day-1f84c805cb5a), and life.
+As of November 2015, Mona quit her job as a software engineer to found [Bra Theory](https://bratheory.com/about/), an empathetic, more mathematical approach to bras. You can read more about it [here](https://bratheory.com/).
 
-Mona is currently working on [Bra Theory](https://bratheory.com/about/), an empathetic, more mathematical approach to bras. We are working to understand the complexities of the bust with more precision than two variables, so that your bra fits, supports, and complements *you* instead of an industry standard. Read more about it [here](https://bratheory.com/).
+Within this blog, Mona writes essays on entrepreneurship, code, [love](https://medium.com/@hazelynut/why-we-fall-in-butterfly-love-cfdb01474068), [family](https://medium.com/@hazelynut/my-father-4d23672e5a3b), food, spirituality, and life. She is a bit of a free spirit, so you can also expect poems, fables, songs, and novel snippets.
 
-Here is Mona's [print statement to the world.]({% post_url 2015-03-26-intro %})
+Mona lives in NYC and enjoys dancing, singing, and writing. She is also the electric bassist and singer of a pre-debut band by the name of black.py (Black Python).
