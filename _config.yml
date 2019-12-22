@@ -2,10 +2,10 @@
 title: What Mona (Over)Thought
 email: mona.zsh@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  fiction, non-fiction, entrepreneurship, tech, and being human
+  coding, writing, gaming, art, and being human
 baseurl: ""
-url: "http://www.monazsh.com" # the base hostname & protocol for your site
-twitter_username: mona_zsh
+url: "https://www.monazsh.com" # the base hostname & protocol for your site
+twitter_username: hazelynutter
 github_username:  mona-zsh
 highlighter: rouge
 excerpt_separator: <!--more-->
