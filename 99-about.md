@@ -4,10 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Mona Zhang is a Princeton English major (class of 2012), software engineer ([Switch](https://en.wikipedia.org/wiki/Switch_(app))), eSports founder ([of the Collegiate Starleague](www.cstarleague.com)), and bra entrepreneur.
+Mona Zhang is a Princeton English major (class of 2012), software engineer ([Switch](https://en.wikipedia.org/wiki/Switch_(app))), eSports founder ([of the Collegiate Starleague](www.cstarleague.com)), and bra entrepreneur ([Bra Theory](www.bratheory.com)).
 
-As of November 2015, Mona quit her job as a software engineer to found [Bra Theory](https://bratheory.com/about/), an empathetic, more mathematical approach to bras. You can read more about it [here](https://bratheory.com/).
+As of December 2019, Mona decided to put Bra Theory on hiatus and start a new chapter (though she has no idea what that is yet).
 
-Within this blog, Mona writes essays on entrepreneurship, code, [love](https://medium.com/@hazelynut/why-we-fall-in-butterfly-love-cfdb01474068), [family](https://medium.com/@hazelynut/my-father-4d23672e5a3b), food, spirituality, and life. She is a bit of a free spirit, so you can also expect poems, fables, songs, and novel snippets.
+Within this blog, Mona writes essays on her interests, which include code, gaming, art, and being human.
 
-Mona lives in NYC and enjoys dancing, singing, and writing. She is also the electric bassist and singer of a pre-debut band by the name of black.py (Black Python).
+Mona lives in NYC and enjoys dancing, singing, and writing. She is also the electric bassist and singer of a pre-debut band by the name of black.py (Black Python), which is looking for a mediocre drummer to join the lineup.

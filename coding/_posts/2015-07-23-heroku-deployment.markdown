@@ -2,7 +2,8 @@
 layout: post
 title:  "Deploying a Django Application on Heroku: Interprocess Communication with APScheduler and Redis"
 date:   2015-07-23
-categories: python django heroku git
+categories: coding
+tags: python django heroku git
 root: "../"
 ---
 

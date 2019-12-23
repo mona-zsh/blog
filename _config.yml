@@ -1,5 +1,5 @@
 # Site settings
-title: What Mona (Over)Thought
+title: Mona Zhang
 email: mona.zsh@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   coding, writing, gaming, art, and being human
@@ -12,3 +12,11 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
+
+permalink: "/:year/:month/:day/:title/"
+
+# nav_pages:
+# - index.html
+# - talks.md
+# - about.md
+# - contact.md

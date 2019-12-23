@@ -2,7 +2,8 @@
 layout: post
 title: Things I Learned
 date: 2015-11-02
-categories: General
+tags: general
+categories: coding
 root: "../"
 ---
 

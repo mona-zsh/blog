@@ -2,7 +2,8 @@
 layout: post
 title: I made a mistake
 date: 2016-07-03
-categories: General
+tags: general
+categories: coding
 published: true
 root: "../"
 ---

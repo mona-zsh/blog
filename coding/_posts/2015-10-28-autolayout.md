@@ -2,7 +2,8 @@
 layout: post
 title: Autolayout
 date: 2015-10-28
-categories: objective-c ios
+tags: objective-c ios
+categories: coding
 root: "../"
 ---
 

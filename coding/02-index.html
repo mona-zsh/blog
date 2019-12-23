@@ -10,7 +10,7 @@ description: writings of a software engineer (iOS, Python, Django)
     {% for post in site.posts %}
       {% if post.categories contains 'coding' %}
   		<li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} ~ <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
      	</li>
       {% endif %}
     {% endfor %}

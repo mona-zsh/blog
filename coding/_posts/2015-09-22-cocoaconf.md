@@ -2,7 +2,8 @@
 layout: post
 title: CocoaConf 2015
 date: 2015-9-22
-categories: objective-c general
+tags: objective-c general
+categories: coding
 root: "../"
 ---
 

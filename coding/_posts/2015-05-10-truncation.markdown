@@ -2,7 +2,8 @@
 layout: post
 title:  "What do we do when text is l..."
 date:   2015-05-10 18:57:49
-categories: objective-c
+tags: objective-c
+categories: coding
 root: "../"
 ---
 

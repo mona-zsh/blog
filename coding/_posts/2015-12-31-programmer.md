@@ -2,7 +2,8 @@
 layout: post
 title: Being a Programmer
 date: 2015-12-31
-categories: General
+tags: objective-c general
+categories: coding
 published: true
 root: "../"
 ---

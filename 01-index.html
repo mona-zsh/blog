@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Essays
+title: Everything
 permalink: /
-description: in chronological order
 ---
 
 <div class="home">
-  <ul class="post-list">
-    {% for post in site.posts %}
-      {% if post.categories contains 'coding' or 'life' %}
-  		<li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} ~ {{ post.categories[0] }} ~ <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
-     	</li>
-      {% endif %}
+
+  <ul>
+
+    {% for category in site.categories %}
+        <br/><span>{{ category[0] }}</span><br/>
+        {% for post in category[1] %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
     {% endfor %}
   </ul>
 

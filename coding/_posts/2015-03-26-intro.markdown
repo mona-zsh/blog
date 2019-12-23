@@ -2,7 +2,8 @@
 layout: post
 title:  "Hello, World"
 date:   2015-03-26
-categories: general
+tags: general
+categories: coding
 root: "../"
 ---
 

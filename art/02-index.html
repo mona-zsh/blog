@@ -1,19 +1,16 @@
 ---
 layout: page
-title: Life
-permalink: /life/
+title: Art
+permalink: /art/
 ---
 
 <div class="life">
   <ul class="post-list">
     {% for post in site.posts %}
-      {% if post.categories contains 'life' %}
+      {% if post.categories contains 'art' %}
         <li>
           <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <h2>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-          {{ post.excerpt }}
         </li>
       {% endif %}
     {% endfor %}

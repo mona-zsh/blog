@@ -2,7 +2,8 @@
 layout: post
 title:  "Why am I so bad at this?"
 date:   2015-04-07 18:20:00
-categories: python
+tags: python, general
+categories: coding
 root: "../"
 ---
 

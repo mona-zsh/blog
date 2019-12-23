@@ -2,7 +2,8 @@
 layout: post
 title:  "How to build an autocomplete tableview"
 date:   2015-03-27 18:57:49
-categories: objective-c
+tags: objective-c
+categories: coding
 root: "../"
 ---
 

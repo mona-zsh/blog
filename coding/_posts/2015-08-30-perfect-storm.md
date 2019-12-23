@@ -2,7 +2,8 @@
 layout: post
 title:  The Perfect Storm - A Preventative Case-Study of A Vanishing View
 date:   2015-08-30
-categories: objective-c
+categories: coding
+tags: objective-c
 root: "../"
 ---
 
