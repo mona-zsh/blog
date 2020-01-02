@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deploying a Django Application on Heroku: Interprocess Communication with APScheduler and Redis"
+title:  "Deploying a Django App on Heroku: Interprocess Communication with APScheduler and Redis"
 date:   2015-07-23
 categories: coding
 tags: python django heroku git

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Autolayout
+title: Primer on Autolayout and Visual Format Language
 date: 2015-10-28
 tags: objective-c ios
 categories: coding

@@ -8,12 +8,43 @@ permalink: /
 
   <ul>
 
-    {% for category in site.categories %}
+  		<br/><p>Coding</p>
+
+  	   {% for post in site.categories.coding %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+        {% for post in site.categories.Coding %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+      <br/><p>Art</p>
+
+        {% for post in site.categories.art %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+        {% for post in site.categories.Coding %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+      <br/><p>Personal</p>
+
+        {% for post in site.categories.personal %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+        {% for post in site.categories.Coding %}
+          <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+        {% endfor %}
+
+
+<!--     {% for category in site.categories %}
         <br/><span>{{ category[0] }}</span><br/>
         {% for post in category[1] %}
           <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
         {% endfor %}
-    {% endfor %}
+    {% endfor %} -->
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

@@ -2,7 +2,7 @@
 layout: post
 title: "why we fall in butterfly love"
 description: ""
-category: art
+category: [art, autobiographical, essay]
 published: true
 tags: [love]
 ---

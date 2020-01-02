@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I made a mistake
+title: rm -rf ~
 date: 2016-07-03
 tags: general
 categories: coding

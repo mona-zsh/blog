@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Being a Programmer
+title: 5 Universal Experiences of Being a Programmer
 date: 2015-12-31
 tags: objective-c general
 categories: coding

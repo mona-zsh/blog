@@ -12,4 +12,10 @@ layout: default
     {{ content }}
   </article>
 
+	<span class="tag">
+	    {% for tag in page.tags %}
+	    <a href="/tags/{{ tag }}/">{{ tag }}</a>
+	    {% endfor %}
+	</span>
+
 </div>

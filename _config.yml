@@ -14,9 +14,3 @@ excerpt_separator: <!--more-->
 markdown: kramdown
 
 permalink: "/:year/:month/:day/:title/"
-
-# nav_pages:
-# - index.html
-# - talks.md
-# - about.md
-# - contact.md

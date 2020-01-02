@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Things I Learned
+title: Lessons Learned as a Junior Software Engineer
 date: 2015-11-02
 tags: general
 categories: coding

@@ -1,0 +1,18 @@
+---
+layout: page
+title: Personal
+permalink: /personal/
+---
+
+<div class="life">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'personal' %}
+        <span class="post-meta">{{ post.date | date: "%Y %b %-d" }} >> <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span><br/>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

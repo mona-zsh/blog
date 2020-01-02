@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "What do we do when text is l..."
+title:  Text Truncation in a UILabel
 date:   2015-05-10 18:57:49
 tags: objective-c
 categories: coding
 root: "../"
 ---
-
-###...onger than what fixed real estate you have in a `UILabel`?
 
 _When `NSLineBreakByTruncatingTail` and the default ellipsis doesn't quite cut it for us, here are three methods to truncate a string to a constraining size and append custom text to the truncated string:_
 

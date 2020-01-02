@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Perfect Storm - A Preventative Case-Study of A Vanishing View
+title:  Case-Study of A Vanishing UIView
 date:   2015-08-30
 categories: coding
 tags: objective-c
@@ -25,7 +25,11 @@ This storm of ours was one of those oddities that happens because of **a conflue
 
 Before I begin, be warned that this blog post is not a prescriptive "how-to" that explains that you should do Y if you want to build X. As much as I would like the mastery to write that kind of blog, another kind of blog calls out to me today.
 
-This blog will be a preventative case study, and a three-part story, of "how something went perfectly wrong", "how we uncovered the wrongness", and "what we should never have done, and never should do".
+This blog will be a preventative case study, and a three-part story, of
+
+* "how something went perfectly wrong"
+* "how we uncovered the wrongness"
+* "what we should never have done, and never should do".
 
 While I do not think it likely for a programmer with this exact problem to stumble upon this blog with a well-phrased Google search, I do think this blog will be **a preventative lesson for beginner iOS programmers**. Perhaps you will spot the warning signs that we did not.
 
@@ -188,7 +192,7 @@ Wait! Thread 2 comes into play, and tries to send a message to `self.aView`. Tha
 
 Thread 2 says no, too. Thread 2 goes ahead and allocates, initializes the object to some address (let's say 234) -- <sub>oh, by the way, Thread 1 finishes saving the the pointer to `_aView` but it's too late because</sub> -- Thread 2 is ready to save the pointer to `_aView` as memory address 234. All messages go to the second view.
 
-Next time a view of yours disappears in 7.1, check that your view logic is being performed on the main thread. Enforce it with a few calls to `performSelectorOnMainThread:`.
+Next time a view of yours disappears in 7.1, check that your view logic is being performed on the main thread. Enforce it with a call to `performSelectorOnMainThread:`.
 
 <hr><br />
 
@@ -200,4 +204,4 @@ While I am usually wary of learning and teaching what not to do as opposed to wh
 
 There can always be a lesson in other's mistakes, and I hope that one of you will have learned something valuable from mine.
 
-_Thanks for reading! (eski)Mona has been heavy in the iOS world, and still learning loads. Spot something you have an answer for (how does one refresh data on soft closes)? Would love to hear your thoughts @ [@hazelynutter](http://www.twitter.com/hazelynutter). Until next time._
+_Thanks for reading! Mona has been heavy in the iOS world, and still learning loads. Spot something you have an answer for (how does one refresh data on soft closes)? Would love to hear your thoughts @ [@hazelynutter](http://www.twitter.com/hazelynutter). Until next time._
